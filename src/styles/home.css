@@ -1,0 +1,42 @@
+.home{
+position: relative;
+width: 100vw;
+height: 116.3vh;
+}
+
+.paralax-home{
+    position: relative;
+}
+
+.bg1{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+}
+
+.bg2{
+    width: 100%;
+position: absolute;
+left: 0;
+z-index: 1;
+transition: none;
+}
+
+.presentation{
+    position: absolute;
+    top: 10rem;
+
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+    align-items: center;
+    z-index: 2;
+
+    font-size: 5rem;
+
+    transition: none;
+}

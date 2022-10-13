@@ -1,0 +1,102 @@
+.about-me{
+    background-color: #1E1E1E;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items:center;
+    justify-content:space-evenly;
+
+    padding: 0 15rem;
+
+    z-index: 2;
+}
+
+.about-img{
+    background-image: url(/assets/profile-picture.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 400px;
+    height: 400px;
+    animation: profile_animate 8s ease-in-out infinite 1s;
+}
+
+@keyframes profile_animate{
+    0%{
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+    50%{
+        border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+    }
+    100%{
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+}
+
+.about-description{
+    width: 35rem;
+}
+
+.about-description h2{
+    text-align: left;
+}
+
+.about-description p{
+    font-size: 1.25rem;
+    text-align: justify;
+}
+
+.wrapper .button {
+    float: left;
+    display: inline-block;
+    height: 60px;
+    width: 59px;
+    margin: 1rem 0.5rem;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0px 10px 10px #000;
+    transition: all 0.3s ease-in-out;
+    color: #1E1E1E;
+  }
+  .wrapper .button:hover {
+    width: 200px;
+  }
+  .wrapper .button .icon{
+    display: inline;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    border-radius: 50px;
+    box-sizing: border-box;
+    line-height: 60px;
+    transition: all 0.3s ease-in-out;
+  }
+  /* .wrapper .button:nth-child(1):hover .icon{
+    background: #4267B2;
+  }
+  .wrapper .button:nth-child(2):hover .icon{
+    background: #1DA1F2;
+  } */
+  .wrapper .button .icon i{
+    font-size: 25px;
+    line-height: 60px;
+    transition: all 0.3s ease-in-out;
+  }
+  /* .wrapper .button:hover .icon i{
+    color:#1E1E1E;
+  } */
+  .wrapper .button span{
+    font-size: 20px;
+    font-weight: 500;
+    /* line-height: 60px; */
+    margin-left: 10px;
+    transition: all 0.3s ease-out;
+  }
+  /* .wrapper .button:nth-child(1) span{
+    color: #4267B2;
+  }
+  .wrapper .button:nth-child(2) span{
+    color: #1DA1F2;
+  } */
