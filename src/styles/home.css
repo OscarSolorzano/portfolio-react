@@ -1,22 +1,26 @@
 .home{
-position: relative;
+position: static;
 width: 100vw;
+height: 122vh;
 height: 116.3vh;
 }
 
 .paralax-home{
     position: relative;
+    height: 100%;
 }
 
 .bg1{
     position: absolute;
-    left: 0;
-    width: 100%;
-    z-index: 3;
+    left: -3px;
+    bottom: 0px;
+    width: 105%;
+    z-index: 2;
 }
 
 .bg2{
-    width: 100%;
+    bottom: 0.95vh;
+width: 105%;
 position: absolute;
 left: 0;
 z-index: 1;
@@ -40,3 +44,76 @@ transition: none;
 
     transition: none;
 }
+
+ /* X-Large devices (large desktops, less than 1400px) */
+ @media (max-width: 1657px) { 
+    .presentation{
+        font-size: 4rem;
+    }
+
+ }
+
+@media (max-width: 1500px) { 
+    .home{
+        height: 100vh;
+    }
+    
+ }
+
+ /* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {  
+    .bg1{
+        width: 120%;
+        left: -10%;
+    }
+
+    .bg2{
+        width: 120%;
+        left: -10%;
+    }
+}
+
+
+ /* Medium devices (tablets, less than 992px) */
+ @media (max-width: 991.98px) {
+    .bg2{
+        bottom: 0.8vh;
+    }
+   }
+
+ /* Small devices (landscape phones, less than 768px) */
+ @media (max-width: 767.98px) { 
+    .bg2{
+        bottom: 0.6vh;
+    }
+    .bg1{
+        width: 150%;
+        left: -25%;
+    }
+
+    .bg2{
+        width: 150%;
+        left: -25%;
+    }
+ }
+ /* X-Small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {  
+    .bg1{
+        width: 170%;
+        left: -35%;
+        height: 57%;
+    }
+
+    .bg2{
+        width: 170%;
+        left: -35%;
+        height: 57%;
+    }
+}
+
+
+
+
+
+
+

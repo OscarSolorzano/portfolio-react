@@ -1,4 +1,5 @@
 .about-me{
+    position: relative;
     background-color: #1E1E1E;
     height: 100vh;
     width: 100vw;
@@ -8,7 +9,7 @@
 
     padding: 0 15rem;
 
-    z-index: 2;
+    z-index: 3;
 }
 
 .about-img{

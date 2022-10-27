@@ -24,7 +24,7 @@ const AboutMe = () => {
 
           <div className="button">
             <div className="icon">
-              <i class="fa-brands fa-github fa-2xl"></i>
+              <i className="fa-brands fa-github fa-2xl"></i>
             </div>
             <span>Github</span>
           </div>
