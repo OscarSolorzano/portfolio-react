@@ -4,9 +4,17 @@ import '../styles/aboutMe.css';
 const AboutMe = () => {
   return (
     <section className="about-me">
-      <div className="about-img"></div>
+      <div className="title-img">
+        <div className='title-sm'>
+          <h2>About me</h2>
+        </div>
+        <div className="about-img"></div>
+
+      </div>
       <div className="about-description">
-        <h2>About me</h2>
+        <div className="title-lg">
+          <h2>About me</h2>
+        </div>
         <p>
           Hello world. My name is Oscar Solorzano and I am a Full Stack
           Developer, I am Ecuadorian, currently 23 years old and on the path to
@@ -17,7 +25,7 @@ const AboutMe = () => {
         <div className="wrapper">
           <div className="button">
             <div className="icon">
-              <i class="fa-brands fa-linkedin fa-2xl"></i>
+              <i className="fa-brands fa-linkedin fa-2xl"></i>
             </div>
             <span>Linked in</span>
           </div>

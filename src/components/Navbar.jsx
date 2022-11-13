@@ -13,7 +13,10 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <h2>
-        Oscar<span>Dev</span>
+      <span>{`{`}</span>
+        Oscar
+        <span>Dev</span>
+        <span>{`}`}</span>
       </h2>
       <div className={`links ${navbar?'active':''}`}>
         <a href="#">Home</a>
