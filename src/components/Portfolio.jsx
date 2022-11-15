@@ -10,7 +10,7 @@ import '../styles/portfolio.css';
 
 const Portfolio = () => {
   return (
-    <section className="portfolio">
+    <section className="portfolio" id='portfolio'>
       <div className="bkg-detail">
         <h2>My projects</h2>
         <span>{'</>'}</span>

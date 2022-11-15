@@ -70,7 +70,7 @@ const MySkills = () => {
         </div>
         <div></div>
       </div>
-      <div className="technologies">
+      <div className="technologies" id='my-skills'>
         <h2>My Skills</h2>
         <div className="technologies-container">
           <div className='technology-container react'>

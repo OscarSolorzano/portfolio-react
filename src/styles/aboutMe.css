@@ -11,6 +11,8 @@
     padding: 0 5vw;
 
     z-index: 3;
+
+    transition: all ease-in-out 0.3s !important;
 }
 
 .about-img{
@@ -49,8 +51,7 @@
   align-items: center;
   justify-content: center;
 }
-.about-description{
-}
+
 
 .about-description h2{
     text-align: left;
@@ -63,6 +64,7 @@
 
 .wrapper .button {
     float: left;
+    text-decoration: none;
     display: inline-block;
     height: 60px;
     width: 59px;
@@ -117,6 +119,15 @@
   } */
 
 /* Small devices (landscape phones, 576px and up) */
+.wrapper .button.no-small{
+  display: none;
+}
+@media (min-width: 426px) {
+  .wrapper .button.no-small{
+    display:inline-block;
+  }
+ }
+
 @media (min-width: 576px) { 
   .about-me{
     padding: 0 10vw;

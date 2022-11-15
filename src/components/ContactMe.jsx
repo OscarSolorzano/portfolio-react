@@ -1,7 +1,8 @@
 import React, { useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 import emailjs from '@emailjs/browser';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import '../styles/contact-me.css';
 
 const ContactMe = () => {
@@ -10,7 +11,6 @@ const ContactMe = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-
     emailjs
       .sendForm(
         'service_mvm6oyr',
@@ -19,28 +19,41 @@ const ContactMe = () => {
         'fyiy506kMOozlSSNj'
       )
       .then(
-        (result) => {
-          console.log(result.text);
+        () => {
+          toast.success(
+            `Thanks for your message, ${"I'll be in touch soon."}`,
+            {
+              position: 'top-center',
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: 'dark',
+            }
+          );
           e.target.reset();
         },
         (error) => {
+          toast.error('Something went wrong please try again', {
+            position: 'top-center',
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'dark',
+          });
           console.log(error.text);
         }
       );
   };
 
   return (
-    <div className="blank-scpace" ref={ref}>
+    <div className="blank-scpace" ref={ref} id='contact-me'>
       <section className={`contact-me ${inView && 'show'}`}>
-        {/* <form ref={form} onSubmit={sendEmail}>
-          <label>Name</label>
-          <input type="text" name="user_name" />
-          <label>Email</label>
-          <input type="email" name="user_email" />
-          <label>Message</label>
-          <textarea name="message" />
-          <input type="submit" value="Send" />
-        </form> */}
         <div className="contact-container">
           <div className="contact-info">
             <div>
@@ -50,40 +63,44 @@ const ContactMe = () => {
                   <span>
                     <img src="/assets/icons/location.png" />
                   </span>
-                  <span>Ecuador</span>
+                  <span>
+                  <a href="https://www.google.com/maps/place/Ecuador/@-1.3603287,-83.8954733,6z/data=!3m1!4b1!4m5!3m4!1s0x902387dda89a4bd5:0x9d76af04119c3702!8m2!3d-1.831239!4d-78.183406">Ecuador</a>
+                  </span>
                 </li>
                 <li>
                   <span>
                     <img src="/assets/icons/mail.png" />
                   </span>
-                  <span>oscar.solorzan98@gmail.com</span>
+                  <span>
+                  <a href="mailto:oscar.solorzan98@gmail.com">oscar.solorzan98@gmail.com</a>
+                  </span>
                 </li>
                 <li>
                   <span>
                     <img src="/assets/icons/call.png" />
                   </span>
-                  <span>+593 98 225 9813</span>
+                  <span>
+                    <a href="tel:+593982259813">+593 98 225 9813</a>
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    <img src="/assets/icons/resume.png" />
+                  </span>
+                  <span>
+                    <a href='/files/OscarSolorzanoResumeEn.pdf' download>Dowload Resume</a>
+                  </span>
                 </li>
               </ul>
             </div>
             <ul className="sci">
               <li>
-                <a href="#">
-                  <img src="/assets/icons/1.png" />
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img src="/assets/icons/3.png" />
-                </a>
-              </li>
-              <li>
-                <a href="#">
+                <a href='https://github.com/OscarSolorzano' target="_blank">
                   <img src="/assets/icons/4.png" />
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href='https://www.linkedin.com/in/oscar-solorzano/' target="_blank">
                   <img src="/assets/icons/5.png" />
                 </a>
               </li>
@@ -91,34 +108,46 @@ const ContactMe = () => {
           </div>
           <div className="contact-form">
             <h2>Send a Message</h2>
-            <div className="form-box">
+            <form className="form-box" onSubmit={sendEmail} ref={form}>
               <div className="input-box w50">
-                <input type={'text'} required />
-                <span>First Name</span>
+                <input type={'text'} required name="from_name" />
+                <span>Name</span>
               </div>
               <div className="input-box w50">
-                <input type={'text'} required />
+                <input type={'text'} required name="from_last_name" />
                 <span>Last Name</span>
               </div>
               <div className="input-box w50">
-                <input type={'email'} required />
+                <input type={'email'} required name="user_email" />
                 <span>Email</span>
               </div>
               <div className="input-box w50">
-                <input type={'text'} required />
+                <input type={'text'} required name="user_phone" />
                 <span>Phone</span>
               </div>
               <div className="input-box w100">
-                <textarea required></textarea>
+                <textarea required name="message"></textarea>
                 <span>Write your message here...</span>
               </div>
               <div className="input-box w100">
                 <input type="submit" value="send" />
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </section>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </div>
   );
 };

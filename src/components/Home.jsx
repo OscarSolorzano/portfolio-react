@@ -27,8 +27,12 @@ const Home = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   });
 
+  const triggerDowload = event =>{
+        event.currentTarget.classList.add('active-dwn');
+  }
+
   return (
-    <section className="home">
+    <section className="home" id='home'>
       <Particles
         id="tsparticles"
         init={particlesInit}
