@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import '../styles/navbar.css';
 
@@ -6,21 +6,27 @@ const Navbar = () => {
 
     const [navbar , setNavbar] = useState(false)
 
-    const handleNavBar = () =>{
-        setNavbar(!navbar)
+    const closeNavBar = () =>{
+        setNavbar(false)
     }
+    const handleNavBar = () =>{
+      setNavbar(!navbar)
+  }
 
   return (
     <nav className="navbar">
       <h2>
-        Oscar<span>Dev</span>
+      <span>{`{`}</span>
+        Oscar
+        <span>Dev</span>
+        <span>{`}`}</span>
       </h2>
       <div className={`links ${navbar?'active':''}`}>
-        <a href="#">Home</a>
-        <a href="#">About me</a>
-        <a href="#">Skills</a>
-        <a href="#">Portfolio</a>
-        <a href="#">Contact me</a>
+        <a href="#home" onClick={closeNavBar} className='active'>Home</a>
+        <a href="#about-me" onClick={closeNavBar}>About me</a>
+        <a href="#my-skills" onClick={closeNavBar}>Skills</a>
+        <a href="#portfolio" onClick={closeNavBar}>Portfolio</a>
+        <a href="#contact-me" onClick={closeNavBar}>Contact me</a>
       </div>
       <div onClick={handleNavBar} className='burguer'>
         <div className={`icon nav-icon-5 ${navbar?'open':''}`}>

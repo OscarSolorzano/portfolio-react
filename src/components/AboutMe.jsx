@@ -3,10 +3,17 @@ import '../styles/aboutMe.css';
 
 const AboutMe = () => {
   return (
-    <section className="about-me">
-      <div className="about-img"></div>
+    <section className="about-me" id="about-me">
+      <div className="title-img">
+        <div className="title-sm">
+          <h2>About me</h2>
+        </div>
+        <div className="about-img"></div>
+      </div>
       <div className="about-description">
-        <h2>About me</h2>
+        <div className="title-lg">
+          <h2>About me</h2>
+        </div>
         <p>
           Hello world. My name is Oscar Solorzano and I am a Full Stack
           Developer, I am Ecuadorian, currently 23 years old and on the path to
@@ -15,19 +22,26 @@ const AboutMe = () => {
           video games, cinema, anime, music, cooking and nature.
         </p>
         <div className="wrapper">
-          <div className="button">
+          <a className="button" href='https://www.linkedin.com/in/oscar-solorzano/' target="_blank">
             <div className="icon">
-              <i class="fa-brands fa-linkedin fa-2xl"></i>
+              <i className="fa-brands fa-linkedin fa-2xl"></i>
             </div>
             <span>Linked in</span>
-          </div>
+          </a>
 
-          <div className="button">
+          <a className="button no-small" href='https://github.com/OscarSolorzano' target="_blank">
             <div className="icon">
               <i className="fa-brands fa-github fa-2xl"></i>
             </div>
             <span>Github</span>
-          </div>
+          </a>
+
+          <a className="button" href='/files/OscarSolorzanoResumeEn.pdf' download>
+            <div className="icon">
+              <i className="fa-solid fa-file"></i>
+            </div>
+            <span>Resume</span>
+          </a>
         </div>
       </div>
     </section>
